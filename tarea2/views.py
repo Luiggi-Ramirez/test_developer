@@ -1,11 +1,10 @@
+from django.views import View
 from django.shortcuts import render
-from rest_framework.views import APIView
-from rest_framework.response import Response
 
 from tarea2.models import ConcesionesMaritimas
 from tarea2.scraping import get_scraping_data, add_json_to_file
 
-class ViewConcesiones(APIView):
+class ViewConcesiones(View):
     '''Vista para manegar las concesiones'''
     def get(self, request):
         # Obtener la data
@@ -30,5 +29,5 @@ class ViewConcesiones(APIView):
             )
         # Guardar los datos en la db
         ConcesionesMaritimas.objects.bulk_create(lst_concesiones, ignore_conflicts=True)
-        # Retorno del json con las concesiones
-        return Response({"msg": concesiones})
+        # Retorno el render de la plantilla con las concesiones
+        return render(request, 'scraping/scraping.html', context={'data': concesiones})
