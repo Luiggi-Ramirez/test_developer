@@ -18,7 +18,7 @@ def get_scraping_data():
     driver.switch_to.frame('centro_sigmar')
     # Encontrar el iframe que contiene la tabla necesaria
     iframe = driver.find_element(By.XPATH, '/html/body/table/tbody/tr[3]/td/iframe')
-    # Ya que el iframe no tiene ID, name o class, ingeso pasando el webelement
+    # Ya que el iframe no tiene ID, name o class, ingreso pasando el webelement
     driver.switch_to.frame(iframe)
     # Constante con la ruta base hacia los select
     BASE_SELECT = "/html/body/font/form/center/table[1]/tbody"
@@ -91,4 +91,4 @@ def get_scraping_data():
 def add_json_to_file(data):
     '''Funcion que crea y almacena el json en un archivo'''
     with open ('concesiones.json', 'w') as json_file:
-        json.dump(data, json_file, ensure_ascii= False)
+        json.dump(data, json_file, ensure_ascii=False)
