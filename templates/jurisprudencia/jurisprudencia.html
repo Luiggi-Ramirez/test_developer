@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CDN Boostrap 5-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Jurisprudencias</title>
+  </head>
+  <body>
+    <!--Contenedor principal-->
+    <div class="container">
+      <!--Contenedor de las filas-->
+      <div class="row">
+        <!--Cantidad de colunmas en 17-->
+        <div class="col-md-17">
+          <!--Añade responsividad a la tabla-->
+          <div class="table-responsive">
+            <!--Estilos de la tabla-->
+            <table class="table table-striped">
+              <!--Títulos de las columnas-->
+              <thead>
+                <h2>Jurisprudencias</h2>
+                <th>Id</th>
+                <th>Tipo Causa</th>
+                <th>Rol</th>
+                <th>Caratula</th>
+                <th>Nombre Proyecto</th>
+                <th>Fecha Sentencia</th>
+                <th>Tipo Trámite</th>
+                <th>Descriptores</th>
+                <th>Link Sentencia</th>
+                <th>URL Sentencia</th>
+                <th>Activo</th>
+                <th>Tribunal</th>
+                <th>tipo</th>
+                <th>relacionada</th>
+                <th>Visitas</th>
+              </thead>
+              <tbody>
+                <!--Datos de la tabla-->
+                {% for jurisprudencias in data %}
+                <tr>
+                  <td>{{jurisprudencias.id}}</td>
+                  <td>{{jurisprudencias.tipo_causa}}</td>
+                  <td>{{jurisprudencias.rol}}</td>
+                  <td>{{jurisprudencias.caratula}}</td>
+                  <td>{{jurisprudencias.nombre_proyecto}}</td>
+                  <td>{{jurisprudencias.fecha_sentencia}}</td>
+                  <td>{{jurisprudencias.tipo_tramite}}</td>
+                  <td>{{jurisprudencias.descriptores}}</td>
+                  <td>{{jurisprudencias.link_sentencia}}</td>
+                  <td>{{jurisprudencias.url_sentencia}}</td>
+                  <td>{{jurisprudencias.activo}}</td>
+                  <td>{{jurisprudencias.tribunal}}</td>
+                  <td>{{jurisprudencias.tipo}}</td>
+                  <td>{{jurisprudencias.relacionada}}</td>
+                  <td>{{jurisprudencias.visitas}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

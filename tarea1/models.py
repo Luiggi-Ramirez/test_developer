@@ -3,7 +3,7 @@ from django.db import models
 
 class Jurisprudencias(models.Model):
     '''Modelo para las Jurisprudencias'''
-    id = models.BigIntegerField(primary_key=True)
+    id_jurisprudencia = models.IntegerField(default=1)
     tipo_causa = models.CharField(max_length=20)
     rol = models.CharField(max_length=50)
     caratula = models.TextField()
@@ -21,8 +21,8 @@ class Jurisprudencias(models.Model):
 
 class Valores(models.Model):
     '''Modelo para los Valores ascoiados a una Jurisprudencia'''
-    id = models.BigIntegerField(primary_key=True)
-    jurisprudencia = models.ForeignKey(Jurisprudencias, on_delete=models.CASCADE)
+    id_valores = models.IntegerField(default=1)
+    id_jurisprudencia = models.IntegerField(default=1)
     id_parametro = models.IntegerField()
     id_item_lista = models.IntegerField(null=True, blank=True)
     valor = models.TextField(null=True, blank=True)
