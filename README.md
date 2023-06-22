@@ -1,6 +1,6 @@
 # TEST DEVELOPER
 Para el sgte. test se utilizo el sistema operativo Ubuntu
-### Instruciones de Uso
+### Instrucciones de Uso
 1. Crear entorno virtual
 `python -m venv env`
 2. Ingresar al entorno
