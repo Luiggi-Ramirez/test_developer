@@ -16,7 +16,7 @@ Para el sgte. test se utilizo el sistema operativo Ubuntu
 ### Ejecutar migraciones 
 `python manage.py migrate`
 ### Iniciar el server local
-python manage.py runserver
+`python manage.py runserver`
 
 ## Tarea 1
 #### Requerimientos
