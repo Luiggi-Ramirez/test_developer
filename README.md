@@ -13,6 +13,8 @@ Para el sgte. test se utilizo el sistema operativo Ubuntu
 - password: admin
 - host: localhost
 - port: 5432
+### Ejecutar migraciones 
+`python manage.py migrate`
 ### Iniciar el server local
 python manage.py runserver
 
